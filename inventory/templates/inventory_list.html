@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory{% endblock %}
+
+{% block content %}
+<h1>Inventory</h1>
+<a href="{% url 'inventory-create' %}" class="btn btn-primary mb-3">Add Inventory Item</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Book Code</th>
+            <th>Branch Code</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in inventory %}
+        <tr>
+            <td>{{ item.book_code }}</td>
+            <td>{{ item.branch_code }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>
+                <a href="{% url 'inventory-detail' item.id %}" class="btn btn-info btn-sm">View</a>
+                <a href="{% url 'inventory-update' item.id %}" class="btn btn-warning btn-sm">Edit</a>
+                <a href="{% url 'inventory-delete' item.id %}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

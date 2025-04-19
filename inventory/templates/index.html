@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Welcome to Henry Bookstore Inventory Management</h1>
+    <p class="lead">Manage your books, branches, and inventory here.</p>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-4">
+        <a href="{% url 'book-list' %}" class="btn btn-primary btn-lg">Manage Books</a>
+        <a href="{% url 'branch-list' %}" class="btn btn-secondary btn-lg">Manage Branches</a>
+        <a href="{% url 'inventory-list' %}" class="btn btn-success btn-lg">Manage Inventory</a>
+    </div>
+</div>
+{% endblock %}

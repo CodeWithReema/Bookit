@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Inventory Details{% endblock %}
+
+{% block content %}
+<h1>Inventory Item</h1>
+<p><strong>Book Code:</strong> {{ inventory_item.book_code }}</p>
+<p><strong>Branch Code:</strong> {{ inventory_item.branch_code }}</p>
+<p><strong>Quantity:</strong> {{ inventory_item.quantity }}</p>
+<a href="{% url 'inventory-list' %}" class="btn btn-secondary">Back to List</a>
+{% endblock %}
